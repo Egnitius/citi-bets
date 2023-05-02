@@ -144,15 +144,15 @@ function openTab(event, tabName) {
 		  <div class="bet-options">
 			<div class="option">
 			  <p>Real Madrid to win</p>
-			  <button onclick="addBet('Real Madrid to win', 1.8)">Add to bet slip</button>
+			  <button onclick="addBet('Real Madrid vs. Barcelona','Real Madrid to win', 1.8)">Add to bet slip</button>
 			</div>
 			<div class="option">
 			  <p>Draw</p>
-			  <button onclick="addBet('Draw', 3.0)">Add to bet slip</button>
+			  <button onclick="addBet('Real Madrid vs. Barcelona','Draw', 3.0)">Add to bet slip</button>
 			</div>
 			<div class="option">
 			  <p>Barcelona to win</p>
-			  <button onclick="addBet('Barcelona to win', 2.5)">Add to bet slip</button>
+			  <button onclick="addBet('Real Madrid vs. Barcelona','Barcelona to win', 2.5)">Add to bet slip</button>
 			</div>
 		  </div>
 		</div>
@@ -340,42 +340,43 @@ function openTab(event, tabName) {
 			<div class="bet-slip">
 				<h3>My bets</h3>
 				<table>
-					<thead>
-						<tr>
-							<th>Event</th>
-							<th>Selection</th>
-							<th>Odds</th>
-							<th>Stake</th>
-							<th>Potential Winnings</th>
-							<th>Remove</th>
-						</tr>
-					</thead>
-					<tbody>
-						<!-- Here you can add rows dynamically with JavaScript as the user places bets -->
-					</tbody>
-					<tfoot>
-						<tr>
-							<td colspan="3"></td>
-							<th>Total stake:</th>
-							<td id="total-stake">0</td>
-							<td></td>
-						</tr>
-						<tr>
-							<td colspan="3"></td>
-							<th>Total winnings:</th>
-							<td id="total-winnings">0</td>
-							<td></td>
-						</tr>
-						<tr>
-							<td colspan="4"></td>
-							<th>Balance:</th>
-							<td id="balance">100</td>
-						</tr>
-					</tfoot>
+				  <thead>
+					<tr>
+					  <th>Event</th>
+					  <th>Selection</th>
+					  <th>Odds</th>
+					  <th>Stake</th>
+					  <th>Potential Winnings</th>
+					  <th>Remove</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<!-- Rows for each selected bet will be added dynamically with JavaScript -->
+				  </tbody>
+				  <tfoot>
+					<tr>
+					  <td colspan="3"></td>
+					  <th>Total stake:</th>
+					  <td id="total-stake">0</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <td colspan="3"></td>
+					  <th>Total winnings:</th>
+					  <td id="total-winnings">0</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <td colspan="4"></td>
+					  <th>Balance:</th>
+					  <td id="balance">100</td>
+					</tr>
+				  </tfoot>
 				</table>
 				<button class="btn-clear" onclick="clearBetSlip()">Clear bet slip</button>
 				<button class="btn-place" onclick="placeBets()">Place bets</button>
-			</div>
+			  </div>
+			  
 		</section>
 		
 	</main>
@@ -445,7 +446,119 @@ function openTab(event, tabName) {
 		  
 		<!-- Footer End -->
 
+<script>
+function addBet(event, selection, odds) {
+  // Get the bet slip table and the total stake and total winnings cells
+  const betSlipTable = document.querySelector('.bet-slip table tbody');
+  const totalStakeCell = document.getElementById('total-stake');
+  const totalWinningsCell = document.getElementById('total-winnings');
+  
+  // Create a new row for the bet in the bet slip table
+  const newRow = document.createElement('tr');
+  
+  // Create cells for the new row with the selection, odds, and stake
+  const eventCell = document.createElement('td');
+  const selectionCell = document.createElement('td');
+  const oddsCell = document.createElement('td');
+  const stakeCell = document.createElement('td');
+  const potentialWinningsCell = document.createElement('td');
+  const removeCell = document.createElement('td');
+  
+  // Add the selection, odds, and stake to the cells
+  eventCell.textContent = event;
+  selectionCell.textContent = selection;
+  oddsCell.textContent = odds;
+  stakeCell.innerHTML = `<input type="number" min="0" step="0.01" value="0" onchange="updateBet(this, ${odds})">`;
+  potentialWinningsCell.textContent = '0';
+  removeCell.innerHTML = '<button onclick="removeBet(this)">Remove</button>';
+  
+  // Append the cells to the new row
+  newRow.appendChild(eventCell);
+  newRow.appendChild(selectionCell);
+  newRow.appendChild(oddsCell);
+  newRow.appendChild(stakeCell);
+  newRow.appendChild(potentialWinningsCell);
+  newRow.appendChild(removeCell);
+  
+  // Append the new row to the bet slip table
+  betSlipTable.appendChild(newRow);
+  
+  // Update the total stake and total winnings cells
+  updateTotalStakeAndWinnings();
+}
 
+function updateBet(inputElement, odds) {
+  // Get the stake and potential winnings cells for this row
+  const stakeCell = inputElement.parentNode;
+  const potentialWinningsCell = stakeCell.nextElementSibling;
+  
+  // Calculate the potential winnings based on the stake and odds
+  const stake = inputElement.value;
+  const potentialWinnings = stake * odds;
+  
+  // Update the potential winnings cell
+  potentialWinningsCell.textContent = potentialWinnings.toFixed(2);
+  
+  // Update the total stake and total winnings cells
+  updateTotalStakeAndWinnings();
+}
+
+function removeBet(buttonElement) {
+  // Get the row to remove
+  const rowToRemove = buttonElement.parentNode.parentNode;
+  
+  // Remove the row from the bet slip table
+  rowToRemove.remove();
+  
+  // Update the total stake and total winnings cells
+  updateTotalStakeAndWinnings();
+}
+
+function clearBetSlip() {
+  // Get the bet slip table and the total stake and total winnings cells
+  const betSlipTable = document.querySelector('.bet-slip table tbody');
+  const totalStakeCell = document.getElementById('total-stake');
+  const totalWinningsCell = document.getElementById('total-winnings');
+  
+  // Remove all rows from the bet slip table
+  betSlipTable.innerHTML = '';
+  
+  // Reset the total stake and total winnings cells
+  totalStakeCell.textContent = '0';
+  totalWinningsCell.textContent = '0';
+}
+
+function updateTotalStakeAndWinnings() {
+  // Get the bet slip table and the total stake and total winnings cells
+  const betSlipTable = document.querySelector('.bet-slip table tbody');
+ 
+  const totalStakeCell = document.getElementById('total-stake');
+const totalWinningsCell = document.getElementById('total-winnings');
+
+// Calculate the total stake and total potential winnings
+let totalStake = 0;
+let totalPotentialWinnings = 0;
+
+// Loop through each row in the bet slip table
+const betRows = betSlipTable.querySelectorAll('tr');
+betRows.forEach(row => {
+// Get the stake and potential winnings cells for this row
+const stakeCell = row.querySelector('td:nth-child(4)');
+const potentialWinningsCell = row.querySelector('td:nth-child(5)');
+// Get the stake and potential winnings for this row
+const stake = parseFloat(stakeCell.querySelector('input').value);
+const potentialWinnings = parseFloat(potentialWinningsCell.textContent);
+
+// Add the stake and potential winnings to the totals
+totalStake += stake;
+totalPotentialWinnings += potentialWinnings;
+});
+
+// Update the total stake and total potential winnings cells
+totalStakeCell.textContent = totalStake.toFixed(2);
+totalWinningsCell.textContent = totalPotentialWinnings.toFixed(2);
+}
+</script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 		<scrpit src="./Js/Script.js"></scrpit>
 </body>

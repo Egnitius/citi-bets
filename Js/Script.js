@@ -62,7 +62,3 @@ function login() {
       return false;
     }
   }
-
-
-  
-
