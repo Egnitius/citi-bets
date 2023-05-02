@@ -168,35 +168,59 @@ section {
     margin-bottom: 30px;
   }
   
-  .sport {
-    margin-bottom: 30px;
-  }
-  
-  .sport img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .sport h3 {
-    font-size: 24px;
-    margin-top: 20px;
-  }
-  
-  .sport p {
-    font-size: 18px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-  }
-  
-  .sport a {
-    display: inline-block;
+  .featured .btn{
+    background-color: red;
+    color: white;
+    border: none;
     padding: 10px 20px;
-    background-color: #FF0000; /* red */
-    color: #FFFFFF; /* white */
-    text-decoration: none;
-    font-weight: bold;
+    font-size: 14px;
     border-radius: 5px;
-  }  
+    cursor: pointer;
+  }
+
+  .featured .btn:hover{
+    color: black;
+  }
+
+/* tabs for featured sports */
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  width: auto;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  color: black;
+}
+
+/* Create an active/current tablink class */
+.tab button:hover {
+  color: red;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+  width: 240px;
+}
+.tabcontent img {
+  height: 200px;
+  width: 240px;
+}
 /* end featured sports sections */
 
 /* Search section */
@@ -579,48 +603,6 @@ footer {
     color: black;
   }
   /* end of footer */
-
-/* tabs for featured sports */
-/* Style the tab */
-.tab {
-  overflow: hidden;
-  width: auto;
-}
-
-/* Style the buttons inside the tab */
-.tab button {
-  background-color: inherit;
-  float: center;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-  color: black;
-}
-
-/* Create an active/current tablink class */
-.tab button:hover {
-  color: red;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border-top: none;
-  width: 240px;
-}
-.tabcontent img {
-  height: 200px;
-  width: 240px;
-}
-
-
 
 /* Soccer content sroll options */
 #soccer-content {
