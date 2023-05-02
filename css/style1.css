@@ -506,9 +506,37 @@ aside {
     flex: 0 0 300px;
 }
 
+/* Promotions section */
 .promotions {
-    margin-bottom: 20px;
+  background-color: #FFE135;
+  border: 1px solid #ff0;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
 }
+
+.promotions h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.promotions p {
+  margin-bottom: 10px;
+  color: black;
+}
+
+.promotions a {
+  color: #f00;
+  text-decoration: none;
+}
+
+.promotions a:hover {
+  text-decoration: underline;
+}
+/* end of promotions */
 
 .upcoming {
     margin-bottom: 20px;
