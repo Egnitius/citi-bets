@@ -297,6 +297,7 @@ section.popular {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
+    border: 2px solid gold;
   }
   
   .bet img {
@@ -319,19 +320,20 @@ section.popular {
     font-weight: bold;
   }
   
-  .bet-button {
+  .bet-options button {
     background-color: red;
     color: #fff;
     border: none;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 14px;
     border-radius: 5px;
     cursor: pointer;
   }
   
-  .bet-button:hover {
+  .bet-options button:hover {
     color: black;
-  }  
+  }
+  
   /* cricket */
   .live h2 {
     font-size: 28px;
@@ -397,6 +399,7 @@ section.popular {
   
   .live .match-info {
     margin-bottom: 20px;
+    margin-top: 10px;
     border: 2px solid gold;
   }
   
@@ -445,12 +448,33 @@ section.popular {
   .live .betting-options button:hover {
     color: black;
   }
-  
 /* end of live betting section */
-.news {
-    background-color: #bbb;
+/* Bets */
+.Bets {
+  background-color: #EEE600;
+  color: black;
+  padding: 20px;
 }
 
+.Bets h2 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.Bets button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.Bets button:hover {
+  color: black;
+}
+/* end of bets */
 aside {
     background-color: #f4f4f4;
     padding: 20px;
@@ -596,3 +620,86 @@ footer {
   width: 240px;
 }
 
+
+
+/* Soccer content sroll options */
+#soccer-content {
+  height: 500px; /* Set the height to 500 pixels */
+  overflow-y: scroll; /* Enable vertical scrolling */
+}
+
+/* Webkit browsers */
+#soccer-content::-webkit-scrollbar {
+  width: 5px; /* Set the width of the scrollbar */
+}
+
+#soccer-content::-webkit-scrollbar-track {
+  background: red; /* Set the background color of the scrollbar track */
+}
+
+/* Firefox */
+#soccer-content {
+  scrollbar-width: thin; /* Set the width of the scrollbar */
+}
+
+#soccer-content::-webkit-scrollbar-track {
+  background: #E4D00A; /* Set the background color of the scrollbar track */
+}
+
+#soccer-content::-webkit-scrollbar-thumb:hover {
+  background-color: yellow; /* Set the background color of the scrollbar thumb on hover */
+}
+/* End of soccer content sroll options */
+/* Cricket content sroll options */
+#cricket-content {
+  height: 500px; /* Set the height to 300 pixels */
+  overflow-y: scroll; /* Enable vertical scrolling */
+}
+  /* Webkit browsers */
+  #cricket-content::-webkit-scrollbar {
+    width: 5px; /* Set the width of the scrollbar */
+  }
+  
+  #cricket-content::-webkit-scrollbar-track {
+    background: red; /* Set the background color of the scrollbar track */
+  }
+  
+  /* Firefox */
+  #cricket-content {
+    scrollbar-width: thin; /* Set the width of the scrollbar */
+  }
+  
+  #cricket-content::-webkit-scrollbar-track {
+    background: #E4D00A; /* Set the background color of the scrollbar track */
+  }
+  
+  #cricket-content::-webkit-scrollbar-thumb:hover {
+    background-color: yellow; /* Set the background color of the scrollbar thumb on hover */
+  }
+/* End of cricket content sroll options */
+/* Rugby content sroll options */
+#rugby-content {
+  height: 500px; /* Set the height to 300 pixels */
+  overflow-y: scroll; /* Enable vertical scrolling */
+}/* Webkit browsers */
+#rugby-content::-webkit-scrollbar {
+  width: 5px; /* Set the width of the scrollbar */
+}
+
+#rugby-content::-webkit-scrollbar-track {
+  background: red; /* Set the background color of the scrollbar track */
+}
+
+/* Firefox */
+#rugby-content {
+  scrollbar-width: thin; /* Set the width of the scrollbar */
+}
+
+#rugby-content::-webkit-scrollbar-track {
+  background: #E4D00A; /* Set the background color of the scrollbar track */
+}
+
+#rugby-content::-webkit-scrollbar-thumb:hover {
+  background-color: yellow; /* Set the background color of the scrollbar thumb on hover */
+}
+/* End of rugby content sroll options */

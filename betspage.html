@@ -116,9 +116,9 @@ function openTab(event, tabName) {
 			<form>
 				<input type="text" placeholder="Find your teams">
 				<button type="submit"><i class="fa fa-search"></i></button>
-			  </form>
+			  </form>			  
 		</section>
-		<section class="popular">
+		<!-- <section class="popular">
 			<h2>Betting Markets</h2>
 				<div class="market">
 				  <img src="./images/images (13).jpg" alt="Market 1 Image" style="width: 100px; height: 100px;">
@@ -132,43 +132,74 @@ function openTab(event, tabName) {
 				  <img src="./images/download (6).jpg" alt="Market 3 Image" style="width: 100px; height: 100px;">
 				  <p>Rugby</p>
 				</div>		  
-		</section>		  
+		</section>		   -->
 		<section class="live">	
 			<h2>Live Betting</h2>
 		<!-- Soccer -->
 <div id="soccer-content" class="sport-content">
 	<div class="match">
-		<h3>Real Madrid vs. Barcelona</h3>
-		<div class="score">
-		  <span class="real-madrid">2</span>
-		  <span class="divider">-</span>
-		  <span class="barcelona">1</span>
+		<div class="bet">
+		  <h3>Real Madrid vs. Barcelona</h3>
+		  <p>Spanish La Liga</p>
+		  <div class="bet-options">
+			<div class="option">
+			  <p>Real Madrid to win</p>
+			  <button onclick="addBet('Real Madrid to win', 1.8)">Add to bet slip</button>
+			</div>
+			<div class="option">
+			  <p>Draw</p>
+			  <button onclick="addBet('Draw', 3.0)">Add to bet slip</button>
+			</div>
+			<div class="option">
+			  <p>Barcelona to win</p>
+			  <button onclick="addBet('Barcelona to win', 2.5)">Add to bet slip</button>
+			</div>
+		  </div>
 		</div>
-		<p class="time">85 min</p>
-		<button class="bet-button">Bet Now</button>
 	  </div>
 	  
 	  <div class="match">
-		<h3>Manchester United vs. Liverpool</h3>
-		<div class="score">
-		  <span class="manchester-united">0</span>
-		  <span class="divider">-</span>
-		  <span class="liverpool">0</span>
+		<div class="bet">
+		  <h3>Manchester United vs. Liverpool</h3>
+		  <p>English Premier League</p>
+		  <div class="bet-options">
+			<div class="option">
+			  <p>Manchester United to win</p>
+			  <button onclick="addBet('Manchester United to win', 1.8)">Add to bet slip</button>
+			</div>
+			<div class="option">
+			  <p>Draw</p>
+			  <button onclick="addBet('Draw', 3.0)">Add to bet slip</button>
+			</div>
+			<div class="option">
+			  <p>Liverpool to win</p>
+			  <button onclick="addBet('Liverpool to win', 2.5)">Add to bet slip</button>
+			</div>
+		  </div>
 		</div>
-		<p class="time">72 min</p>
-		<button class="bet-button">Bet Now</button>
 	  </div>
 	  
 	  <div class="match">
-		<h3>Bayern Munich vs. Borussia Dortmund</h3>
-		<div class="score">
-		  <span class="bayern-munich">3</span>
-		  <span class="divider">-</span>
-		  <span class="borussia-dortmund">2</span>
+		<div class="bet">
+		  <h3>Bayern Munich vs. Borussia Dortmund</h3>
+		  <p>German Bundesliga</p>
+		  <div class="bet-options">
+			<div class="option">
+			  <p>Bayern Munich to win</p>
+			  <button onclick="addBet('Bayern Munich to win', 1.5)">Add to bet slip</button>
+			</div>
+			<div class="option">
+			  <p>Draw</p>
+			  <button onclick="addBet('Draw', 3.2)">Add to bet slip</button>
+			</div>
+			<div class="option">
+			  <p>Borussia Dortmund to win</p>
+			  <button onclick="addBet('Borussia Dortmund to win', 2.8)">Add to bet slip</button>
+			</div>
+		  </div>
 		</div>
-		<p class="time">90+5 min</p>
-		<button class="bet-button">Bet Now</button>
 	  </div>
+	  
   </div>
   
   <!-- Cricket -->
@@ -191,7 +222,48 @@ function openTab(event, tabName) {
 		  <li><button>England</button></li>
 		</ul>
 	</div>
+ 
+
+  <div class="match-info">
+	<h3>West Indies vs. Pakistan</h3>
+	<p>Match Status: In Progress</p>
+	<p>Current Score: West Indies 134/2 (25 overs)</p>
   </div>
+  <div class="betting-options">
+	<h4>Top Batsman</h4>
+	<ul>
+	  <li><button>Chris Gayle</button></li>
+	  <li><button>Babar Azam</button></li>
+	  <li><button>Shai Hope</button></li>
+	</ul>
+	<h4>Winner of the Match</h4>
+	<ul>
+	  <li><button>West Indies</button></li>
+	  <li><button>Pakistan</button></li>
+	</ul>
+  </div>
+
+  <div class="match-info">
+	<h3>South Africa vs. Sri Lanka</h3>
+	<p>Match Status: In Progress</p>
+	<p>Current Score: South Africa 256/7 (45 overs)</p>
+  </div>
+  <div class="betting-options">
+	<h4>Top Batsman</h4>
+	<ul>
+	  <li><button>Quinton de Kock</button></li>
+	  <li><button>Kusal Mendis</button></li>
+	  <li><button>Hashim Amla</button></li>
+	</ul>
+	<h4>Winner of the Match</h4>
+	<ul>
+	  <li><button>South Africa</button></li>
+	  <li><button>Sri Lanka</button></li>
+	</ul>
+  </div>
+  
+
+</div>
   
   <!-- Rugby -->
   <div id="rugby-content" class="sport-content" style="display:none;">
@@ -216,12 +288,96 @@ function openTab(event, tabName) {
 			<li><button>Draw</button></li>
 		</ul>
 	</div>
+
+	<div class="match-info">
+		<h3>South Africa vs. Fiji</h3>
+		<p>Match Status: In Progress</p>
+		<p>Current Score: South Africa 31 - Fiji 24 (65 minutes)</p>
+	</div>
+	<div class="betting-options">
+		<h4>Next Scoring Play</h4>
+		<ul>
+			<li><button>Fiji Try</button></li>
+			<li><button>South Africa Penalty</button></li>
+			<li><button>No Scoring in Next 5 minutes</button></li>
+		</ul>
+	<h4>Winning Margin</h4>
+		<ul>
+			<li><button>Fiji by 10-20 points</button></li>
+			<li><button>Fiji by 18-20 points</button></li>
+			<li><button>South Africa by 10-20 points</button></li>
+			<li><button>South Africa by 18-28 points</button></li>
+			<li><button>Draw</button></li>
+		</ul>
+	</div>
+
+	<div class="match-info">
+		<h3>Argentina vs. Wales</h3>
+		<p>Match Status: In Progress</p>
+		<p>Current Score: Argentina 41 - Wales 34 (65 minutes)</p>
+	</div>
+	<div class="betting-options">
+		<h4>Next Scoring Play</h4>
+		<ul>
+			<li><button>Wales Try</button></li>
+			<li><button>Argentina Penalty</button></li>
+			<li><button>No Scoring in Next 5 minutes</button></li>
+		</ul>
+	<h4>Winning Margin</h4>
+		<ul>
+			<li><button>Wales by 5-16 points</button></li>
+			<li><button>Wales by 19-26 points</button></li>
+			<li><button>Argentina by 7-13 points</button></li>
+			<li><button>Argentina by 19-30 points</button></li>
+			<li><button>Draw</button></li>
+		</ul>
+	</div>
+
   </div>
 		</section>		  
-		<section class="news">
-			<h2>Bets</h2>
-			<!-- Code for latest news and updates goes here -->
+		<section class="Bets">
+			<h2>Bet slip</h2>
+			<div class="bet-slip">
+				<h3>My bets</h3>
+				<table>
+					<thead>
+						<tr>
+							<th>Event</th>
+							<th>Selection</th>
+							<th>Odds</th>
+							<th>Stake</th>
+							<th>Potential Winnings</th>
+							<th>Remove</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- Here you can add rows dynamically with JavaScript as the user places bets -->
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="3"></td>
+							<th>Total stake:</th>
+							<td id="total-stake">0</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td colspan="3"></td>
+							<th>Total winnings:</th>
+							<td id="total-winnings">0</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td colspan="4"></td>
+							<th>Balance:</th>
+							<td id="balance">100</td>
+						</tr>
+					</tfoot>
+				</table>
+				<button class="btn-clear" onclick="clearBetSlip()">Clear bet slip</button>
+				<button class="btn-place" onclick="placeBets()">Place bets</button>
+			</div>
 		</section>
+		
 	</main>
 	<aside>
 		<section class="promotions">
