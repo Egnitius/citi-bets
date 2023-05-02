@@ -63,17 +63,6 @@ function login() {
     }
   }
 
-  var app = new Vue({
-    el: '#app',
-    components: {
-      'b-tabs': BootstrapVue.components.BTabs,
-      'b-tab': BootstrapVue.components.BTab,
-    },
-  });
-
-//nav function for smaller screens
-
-
 
   
 
