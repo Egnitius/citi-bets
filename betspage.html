@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Sports Betting Website</title>
+<!-- Favicon -->
+<link href="img/favicon.ico" rel="icon">
+
+<!-- Google Web Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@500;600;700&family=Pacifico&display=swap" rel="stylesheet"> 
+
+<!-- Icon Font Stylesheet -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+<link rel="stylesheet" href="./css/style1.css">
+
+<script>
+	// function to show/hide sports content
+function showSport(sportId) {
+  // Hide all sports
+  var sports = document.getElementsByClassName("sport-content");
+  for (var i = 0; i < sports.length; i++) {
+    sports[i].style.display = "none";
+  }
+
+  // Show the selected sport
+  var sport = document.getElementById(sportId);
+  sport.style.display = "block";
+}
+
+// Sticky Navbar
+$(window).scroll(function () {
+  if ($(this).scrollTop() > 40) {
+    $('.navbar').addClass('sticky-top');
+  } else {
+    $('.navbar').removeClass('sticky-top');
+  }
+});
+
+// Responsive Navbar
+$(document).ready(function () {
+  $('.hamburger').click(function () {
+    $('.nav-wrapper').toggleClass('active');
+  });
+});
+
+</script>
+</head>
+<body>
+	<header>
+		<div class="logo">Citi-Bets</div>
+		<div class="nav-wrapper">
+		  <nav>
+			<ul>
+			  <li><a href="#">Home</a></li>
+			  <li class="dropdown">
+				<a href="#" class="dropbtn">Live Betting</a>
+				<div class="dropdown-content">
+				  <a href="#" onclick="showSport('soccer-content')">Soccer</a>
+				  <a href="#" onclick="showSport('cricket-content')">Cricket</a>
+				  <a href="#" onclick="showSport('rugby-content')">Rugby</a>
+				</div>
+			  </li>
+			  <li><a href="#">Communities</a></li>
+			  <li><a href="Help.html">Help</a></li>
+			  <li><a href="Login.html">Login</a></li>
+			  <li><a href="Register.html">Register</a></li>
+			</ul>
+		  </nav>
+		  <div class="hamburger">&#9776;</div>
+		</div>
+	  </header>	  		  
+	
+	<main>
+		<section class="featured">
+			<h2>Featured Sports and Events</h2>
+			<!-- Code for featured sports and events goes here -->
+			<div id="app">
+				<b-tabs content-class="mt-3">
+				  <b-tab title="Soccer" active>
+					<div class="sport">
+					  <img src="./images/socceroi.png" alt="Sport Image">
+					  <h3>Soccer</h3>
+					  <p>Description of the sport goes here.</p>
+					  <a href="#">View More</a>
+					</div>
+				  </b-tab>
+				  <b-tab title="Cricket">
+					<div class="sport">
+					  <img src="./images/cricketoi.png" alt="Sport Image">
+					  <h3>Cricket</h3>
+					  <p>Description of the sport goes here.</p>
+					  <a href="#">View More</a>
+					</div>
+				  </b-tab>
+				  <b-tab title="Rugby">
+					<div class="sport">
+					  <img src="./images/images (12).jpg" alt="Sport Image">
+					  <h3>Rugby</h3>
+					  <p>Description of the sport goes here.</p>
+					  <a href="#">View More</a>
+					</div>
+				  </b-tab>
+				</b-tabs>
+			  </div>				
+		</section>
+		<section class="search">
+			<h2>Search</h2>
+			<!-- Code for search bar goes here -->
+			<form>
+				<input type="text" placeholder="Find your teams">
+				<button type="submit"><i class="fa fa-search"></i></button>
+			  </form>
+		</section>
+		<section class="popular">
+			<h2>Betting Markets</h2>
+				<div class="market">
+				  <img src="./images/images (13).jpg" alt="Market 1 Image" >
+				  <p>Soccer</p>
+				</div>
+				<div class="market">
+				  <img src="./images/download (5).jpg" alt="Market 2 Image">
+				  <p>Cricket</p>
+				</div>
+				<div class="market">
+				  <img src="./images/download (6).jpg" alt="Market 3 Image">
+				  <p>Rugby</p>
+				</div>		  
+		</section>		  
+		<section class="live">	
+					
+		<!-- Soccer -->
+<div id="soccer-content" class="sport-content">
+	<div class="match">
+		<h3>Real Madrid vs. Barcelona</h3>
+		<div class="score">
+		  <span class="real-madrid">2</span>
+		  <span class="divider">-</span>
+		  <span class="barcelona">1</span>
+		</div>
+		<p class="time">85 min</p>
+		<button class="bet-button">Bet Now</button>
+	  </div>
+	  
+	  <div class="match">
+		<h3>Manchester United vs. Liverpool</h3>
+		<div class="score">
+		  <span class="manchester-united">0</span>
+		  <span class="divider">-</span>
+		  <span class="liverpool">0</span>
+		</div>
+		<p class="time">72 min</p>
+		<button class="bet-button">Bet Now</button>
+	  </div>
+	  
+	  <div class="match">
+		<h3>Bayern Munich vs. Borussia Dortmund</h3>
+		<div class="score">
+		  <span class="bayern-munich">3</span>
+		  <span class="divider">-</span>
+		  <span class="borussia-dortmund">2</span>
+		</div>
+		<p class="time">90+5 min</p>
+		<button class="bet-button">Bet Now</button>
+	  </div>
+  </div>
+  
+  <!-- Cricket -->
+  <div id="cricket-content" class="sport-content" style="display:none;">
+	<div class="match-info">
+		<h3>India vs. England</h3>
+		<p>Match Status: In Progress</p>
+		<p>Current Score: India 112/3 (20 overs)</p>
+	</div>
+	<div class="betting-options">
+		<h4>Top Batsman</h4>
+		<ul>
+		  <li><button>Virat Kohli</button></li>
+		  <li><button>Joe Root</button></li>
+		  <li><button>Jonny Bairstow</button></li>
+		</ul>
+		<h4>Winner of the Match</h4>
+		<ul>
+		  <li><button>India</button></li>
+		  <li><button>England</button></li>
+		</ul>
+	</div>
+  </div>
+  
+  <!-- Rugby -->
+  <div id="rugby-content" class="sport-content" style="display:none;">
+	<div class="match-info">
+		<h3>New Zealand vs. Australia</h3>
+		<p>Match Status: In Progress</p>
+		<p>Current Score: New Zealand 21 - Australia 14 (65 minutes)</p>
+	</div>
+	<div class="betting-options">
+		<h4>Next Scoring Play</h4>
+		<ul>
+			<li><button>New Zealand Try</button></li>
+			<li><button>Australia Penalty</button></li>
+			<li><button>No Scoring in Next 5 minutes</button></li>
+		</ul>
+	<h4>Winning Margin</h4>
+		<ul>
+			<li><button>New Zealand by 1-10 points</button></li>
+			<li><button>New Zealand by 11-20 points</button></li>
+			<li><button>Australia by 1-10 points</button></li>
+			<li><button>Australia by 11-20 points</button></li>
+			<li><button>Draw</button></li>
+		</ul>
+	</div>
+  </div>
+		</section>		  
+		<section class="news">
+			<h2>Latest News and Updates</h2>
+			<!-- Code for latest news and updates goes here -->
+		</section>
+	</main>
+	<aside>
+		<section class="promotions">
+			<h2>Promotions and Bonuses</h2>
+			<!-- Code for promotions and bonuses goes here -->
+		</section>
+		<section class="upcoming">
+			<h2>Upcoming Events and Matches</h2>
+			<!-- Code for upcoming events and matches goes here -->
+		</section>
+		<section class="quick-links">
+			<h2>Quick Links</h2>
+			<!-- Code for quick links goes here -->
+		</section>
+		<section class="help">
+			<h2>Help and Support</h2>
+			<!-- Code for help and support section goes here -->
+		</section>
+	</aside>
+
+
+	    <!-- Footer Start -->
+		<footer>
+			<div class="footer-container">
+			  <div class="footer-section contact">
+				<h4>Contact Us</h4>
+				<p>19 Amosheff Street<br> Braamfontein, JHB 12345<br> Phone: 011-555-2365<br> Email: info@citibets.com</p>
+			  </div>
+			  <div class="footer-section location">
+				<h4>Location</h4>
+				<p>Our office is located in the heart of downtown Anytown, just off Main Street. Feel free to drop by and say hello!</p>
+			  </div>
+			  <div class="footer-section social-media">
+				<h4>Follow Us on Social Media</h4>
+				<ul>
+				  <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+				  <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+				  <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+				  <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+				</ul>
+			  </div>
+			</div>
+			<nav class="btmnav">
+			  <ul>
+				<li><a href="#">Privacy Policy</a></li>
+				<li><a href="#">Responsible Gambling</a></li>
+				<li><a href="#">Terms and Conditions</a></li>
+			  </ul>
+			</nav>
+			<p>&copy; CITI-BETS</p>
+		  </footer>
+		  
+		<!-- Footer End -->
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+		<scrpit src="./Js/Script.js"></scrpit>
+</body>
+</html>
