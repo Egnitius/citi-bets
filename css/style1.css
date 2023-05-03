@@ -246,31 +246,11 @@ section {
     border-bottom: 2px solid black;
     padding: 10px;
     margin-right: 10px;
-    width: 70%;
+    /* width: 70%; */
     font-size: 16px;
     color: black;
   }
-  
-  button[type="submit"] {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button[type="submit"]:hover{
-    color:#000000
-  }
-  button[type="submit"] i {
-    margin-right: 5px;
-  }
-  
-  button[type="submit"] .fa-search:before {
-    content: "\f002";
-  }  
+   
 /* end of search section */
 
 /* popular betting markets */

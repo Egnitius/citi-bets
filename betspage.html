@@ -54,6 +54,25 @@ function openTab(event, tabName) {
   event.currentTarget.className += " active";
 }
 
+// Search team codes
+
+function searchResults(){
+		let input = document.getElementById('search_bar').value;
+		input = input.toLowerCase();
+		let searchList = document.getElementsByClassName('search_results');
+		 for(let indexValue =0; indexValue <searchList.length; indexValue++){
+			 if(!searchList[indexValue].innerText.toLowerCase().includes(input)){
+				searchList[indexValue].style.display="none";
+				}
+				else {
+					searchList[indexValue].display="list-item";			
+				}
+		 }
+
+		
+	}
+// end here
+
 </script>
 </head>
 <body>
@@ -117,9 +136,53 @@ function openTab(event, tabName) {
 			<h2>Search</h2>
 			<!-- Code for search bar goes here -->
 			<form>
-				<input type="text" placeholder="Find your teams">
-				<button type="submit"><i class="fa fa-search"></i></button>
-			  </form>			  
+				<input type="text" placeholder="Find your teams" id="search_bar" onkeypress="searchResults()">
+				<!-- <button type="submit"><i class="fa fa-search"></i></button> -->
+			  </form>
+			  <h1 class="search_by_header">Soccer Fixture</h1>
+			  <ul class=""> 
+				<!-- <h1>Soccer Fixture</h1> -->
+				<li class="search_results">Chelsea Vs Arsenal</li>
+				<li class="search_results">South Africa Vs Botswana</li>
+				<li class="search_results">Kaizer Chiefs Vs Olando Pirates</li>
+				<li class="search_results">Manchester City Vs Manchester Unated</li>
+				<li class="search_results">Mamelodi Sundowns Vs Amazulu</li>
+				<li class="search_results">Royal AM Vs TX Gallants</li>
+			  </ul>
+			
+			   <h1>Cricket Fixture</h1>
+			 
+			  <ul class="search_by_header">
+				<li class="search_results">Dolphins Vs Knights</li>
+				<li class="search_results">South Africa Vs New Zealand</li>
+				<li class="search_results">Warriors Vs Titans</li>
+				<li class="search_results">Lions Vs North West Dragons</li>
+				<li class="search_results">Boland Vs Western Province </li>
+				<li class="search_results">Border Vs Easterns</li>
+			  </ul>
+
+			   <h1>Rugby Fixture</h1>
+			  <ul class="list">
+				<li class="search_results">Blue Bulls Vs Cheetahs</li>
+				<li class="search_results">Falcons Vs Golden Lions</li>
+				<li class="search_results">Leopards Vs Griquas</li>
+				<li class="search_results">Sharks Vs SWD Eagles</li>
+			  </ul>
+		</section>
+		<section class="popular">
+			<h2>Betting Markets</h2>
+				<div class="market">
+				  <img src="./images/images (13).jpg" alt="Market 1 Image" >
+				  <p>Soccer</p>
+				</div>
+				<div class="market">
+				  <img src="./images/download (5).jpg" alt="Market 2 Image">
+				  <p>Cricket</p>
+				</div>
+				<div class="market">
+				  <img src="./images/download (6).jpg" alt="Market 3 Image">
+				  <p>Rugby</p>
+				</div>					  
 		</section>
 		<!-- <section class="popular">
 			<h2>Betting Markets</h2>
@@ -165,15 +228,15 @@ function openTab(event, tabName) {
 		  <div class="bet-options">
 			<div class="option">
 			  <p>Manchester United to win</p>
-			  <button onclick="addBet('Manchester United to win', 1.8)">Add to bet slip</button>
+			  <button onclick="addBet('Manchester United vs. Liverpool','Manchester United to win', 1.8)">Add to bet slip</button>
 			</div>
 			<div class="option">
 			  <p>Draw</p>
-			  <button onclick="addBet('Draw', 3.0)">Add to bet slip</button>
+			  <button onclick="addBet('Manchester United vs. Liverpool','Draw', 3.0)">Add to bet slip</button>
 			</div>
 			<div class="option">
 			  <p>Liverpool to win</p>
-			  <button onclick="addBet('Liverpool to win', 2.5)">Add to bet slip</button>
+			  <button onclick="addBet('Manchester United vs. Liverpool','Liverpool to win', 2.5)">Add to bet slip</button>
 			</div>
 		  </div>
 		</div>
@@ -186,15 +249,15 @@ function openTab(event, tabName) {
 		  <div class="bet-options">
 			<div class="option">
 			  <p>Bayern Munich to win</p>
-			  <button onclick="addBet('Bayern Munich to win', 1.5)">Add to bet slip</button>
+			  <button onclick="addBet('Bayern Munich vs. Borussia Dortmund','Bayern Munich to win', 1.5)">Add to bet slip</button>
 			</div>
 			<div class="option">
 			  <p>Draw</p>
-			  <button onclick="addBet('Draw', 3.2)">Add to bet slip</button>
+			  <button onclick="addBet('Bayern Munich vs. Borussia Dortmund','Draw', 3.2)">Add to bet slip</button>
 			</div>
 			<div class="option">
 			  <p>Borussia Dortmund to win</p>
-			  <button onclick="addBet('Borussia Dortmund to win', 2.8)">Add to bet slip</button>
+			  <button onclick="addBet('Bayern Munich vs. Borussia Dortmund','Borussia Dortmund to win', 2.8)">Add to bet slip</button>
 			</div>
 		  </div>
 		</div>
@@ -218,7 +281,7 @@ function openTab(event, tabName) {
 		</ul>
 		<h4>Winner of the Match</h4>
 		<ul>
-		  <li><button>India</button></li>
+		  <li><button id="ibtn">India</button></li>
 		  <li><button>England</button></li>
 		</ul>
 	</div>
@@ -332,8 +395,6 @@ function openTab(event, tabName) {
 			<li><button>Draw</button></li>
 		</ul>
 	</div>
-
-  </div>
 		</section>		  
 		<section class="Bets">
 			<h2>Bet slip</h2>
@@ -447,6 +508,142 @@ function openTab(event, tabName) {
 		<!-- Footer End -->
 
 <script>
+// select all the buttons in the rugby betting options section
+var rugbyButtons = document.querySelectorAll("#rugby-content .betting-options button");
+
+// add click event listener to each button
+rugbyButtons.forEach(function(button) {
+  button.addEventListener("click", function() {
+    // get the match name, bet type and selection from the button's text
+    var matchName = button.parentElement.parentElement.previousElementSibling.querySelector("h3").textContent;
+    var betType = button.parentElement.parentElement.querySelector("h4").textContent;
+    var selection = button.textContent;
+
+    // get the odds and update the bet slip
+    var odds = getOdds(matchName, betType, selection);
+    updateBetSlip(matchName, betType, selection, odds);
+  });
+});
+
+// function to get the odds of a selection based on match name, bet type and selection
+function getOdds(matchName, betType, selection) {
+  // replace spaces in the match name with underscores and concatenate with bet type and selection to form the key
+  var key = matchName.replace(/ /g, "_") + "_" + betType + "_" + selection;
+  // use the key to retrieve the odds from a data object (example below)
+  var data = {
+    "New_Zealand_vs._Australia_Winning_Margin_New_Zealand_by_1-10_points": 2.00,
+    "New_Zealand_vs._Australia_Winning_Margin_New_Zealand_by_11-20_points": 2.50,
+    "New_Zealand_vs._Australia_Winning_Margin_Australia_by_1-10_points": 3.50,
+    "New_Zealand_vs._Australia_Winning_Margin_Australia_by_11-20_points": 4.00,
+    "New_Zealand_vs._Australia_Winning_Margin_Draw": 21.00,
+    "South_Africa_vs._Fiji_Winning_Margin_Fiji_by_10-20_points": 7.00,
+    "South_Africa_vs._Fiji_Winning_Margin_Fiji_by_18-20_points": 11.00,
+    "South_Africa_vs._Fiji_Winning_Margin_South_Africa_by_10-20_points": 2.50,
+    "South_Africa_vs._Fiji_Winning_Margin_South_Africa_by_18-28_points": 4.00,
+    "South_Africa_vs._Fiji_Winning_Margin_Draw": 34.00,
+    "Argentina_vs._Wales_Winning_Margin_Wales_by_5-16_points": 3.00,
+    "Argentina_vs._Wales_Winning_Margin_Wales_by_19-26_points": 5.00,
+    "Argentina_vs._Wales_Winning_Margin_Argentina_by_7-13_points": 4.00,
+    "Argentina_vs._Wales_Winning_Margin_Argentina_by_19-30_points": 7.00,
+    "Argentina_vs._Wales_Winning_Margin_Draw": 34.00
+  };
+  return data[key];
+}
+
+// function to update the bet slip with a new bet
+function updateBetSlip(matchName, betType, selection, odds) {
+  var betSlipTable = document.querySelector(".bet-slip table tbody");
+  var newRow = document.createElement("tr");
+  newRow.innerHTML = `
+    <td>${matchName}</td>
+    <td>${betType}: ${selection}</td>
+    <td>${odds}</td>
+    <td><input type="number" min="1" max="1000" value="1" oninput="calculatePotentialWinnings(this)"></td>
+    <td class="potential-winnings">0</td>
+    <td><button class="btn-remove" onclick="removeBet(this)">X</button></td>
+  `;
+  betSlipTable.appendChild(newRow);
+  updateTotalStake();
+  updateTotalWinnings();
+  updateBalance();
+} 
+// function to calculate the potential winnings for a bet based on the stake and odds
+function calculatePotentialWinnings(input) {
+var stake = parseInt(input.value);
+var odds = parseFloat(input.parentElement.previousElementSibling.textContent);
+var potentialWinnings = input.parentElement.nextElementSibling;
+var winnings = stake * odds;
+potentialWinnings.textContent = winnings.toFixed(2);
+updateTotalStake();
+updateTotalWinnings();
+updateBalance();
+}
+
+// function to remove a bet from the bet slip
+function removeBet(button) {
+var row = button.parentElement.parentElement;
+row.remove();
+updateTotalStake();
+updateTotalWinnings();
+updateBalance();
+}
+
+// function to clear the bet slip of all bets
+function clearBetSlip() {
+var betSlipTable = document.querySelector(".bet-slip table tbody");
+while (betSlipTable.firstChild) {
+betSlipTable.removeChild(betSlipTable.firstChild);
+}
+updateTotalStake();
+updateTotalWinnings();
+updateBalance();
+}
+
+// function to update the total stake displayed in the bet slip
+function updateTotalStake() {
+var totalStake = 0;
+var stakeElements = document.querySelectorAll(".bet-slip table tbody td input[type='number']");
+for (var i = 0; i < stakeElements.length; i++) {
+totalStake += parseInt(stakeElements[i].value);
+}
+document.getElementById("total-stake").textContent = totalStake;
+}
+
+// function to update the total winnings displayed in the bet slip
+function updateTotalWinnings() {
+var totalWinnings = 0;
+var winningsElements = document.querySelectorAll(".bet-slip table tbody .potential-winnings");
+for (var i = 0; i < winningsElements.length; i++) {
+totalWinnings += parseFloat(winningsElements[i].textContent);
+}
+document.getElementById("total-winnings").textContent = totalWinnings.toFixed(2);
+}
+
+// function to update the balance displayed in the bet slip
+function updateBalance() {
+var totalStake = parseInt(document.getElementById("total-stake").textContent);
+var totalWinnings = parseFloat(document.getElementById("total-winnings").textContent);
+var balance = 100 - totalStake + totalWinnings;
+document.getElementById("balance").textContent = balance.toFixed(2);
+}
+
+// function to place the bets and update the balance
+function placeBets() {
+var totalStake = parseInt(document.getElementById("total-stake").textContent);
+var balance = parseFloat(document.getElementById("balance").textContent);
+if (totalStake > balance) {
+alert("Not enough balance to place the bets.");
+} else {
+alert("Bets placed successfully.");
+document.querySelector(".bet-slip table tbody").innerHTML = "";
+document.getElementById("total-stake").textContent = 0;
+document.getElementById("total-winnings").textContent = 0;
+document.getElementById("balance").textContent = balance - totalStake;
+}
+}
+
+
+	// Soccer betting
 function addBet(event, selection, odds) {
   // Get the bet slip table and the total stake and total winnings cells
   const betSlipTable = document.querySelector('.bet-slip table tbody');
@@ -533,7 +730,7 @@ function updateTotalStakeAndWinnings() {
   const betSlipTable = document.querySelector('.bet-slip table tbody');
  
   const totalStakeCell = document.getElementById('total-stake');
-const totalWinningsCell = document.getElementById('total-winnings');
+  const totalWinningsCell = document.getElementById('total-winnings');
 
 // Calculate the total stake and total potential winnings
 let totalStake = 0;
@@ -558,6 +755,10 @@ totalPotentialWinnings += potentialWinnings;
 totalStakeCell.textContent = totalStake.toFixed(2);
 totalWinningsCell.textContent = totalPotentialWinnings.toFixed(2);
 }
+// end of soccer betting
+
+// rugby betting
+
 </script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 		<scrpit src="./Js/Script.js"></scrpit>
