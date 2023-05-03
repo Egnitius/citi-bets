@@ -1,20 +1,11 @@
-// //Retrieving user input
-// const usernameInput = document.getElementById('user_name');
-// const pwdInput = document.getElementById('pwd');
-
-// //Storing the input in sessions
-// sessionStorage.setItem('username', usernameInput.value);
-// sessionStorage.setItem('password', pwdInput.value);
-
-
 //form validation
 function validateForm() {
     // Get the form values
     var name = document.getElementById("first_name").value;
-    var uname = document.getElementById("user_name").value;
+    var uname = document.getElementById("username").value;
     var email = document.getElementById("email").value;
-    var password = document.getElementById("pwd").value;
-    var confirmPassword = document.getElementById("cpwd").value;
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("cpassword").value;
 
     // Check that all required fields are filled out
     if (name == "" || uname == "" || email == "" || password == "" || confirmPassword == "") {
@@ -48,14 +39,14 @@ function validateForm() {
 //Reading session data and loging in 
 function login() {
     // Get the form values
-    var username = document.getElementById("user_name").value;
-    var password = document.getElementById("pwd").value;
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
     
     // Check if the username and password are correct
     if (username === sessionStorage.getItem("username") && password === sessionStorage.getItem("password")) {
       alert("Login successful!");
       // Redirect to the home page
-      window.location.href = "betspage.html";
+      window.location.href = "/betspage.html";
       return true;
     } else {
       alert("Incorrect username or password. Please try again.");

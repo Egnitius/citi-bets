@@ -75,18 +75,18 @@
                     </div>
                 </div>
             </div>
-            <form class="form-right" action="Home.html" onsubmit="return login();">
+            <form class="form-right" id="logForm" onsubmit="return validateLoginForm();">
                 <h2 class="text-uppercase">Log In</h2>
                 <div class="row">
                     <div class="mb-3">
                         <label>User Name</label>
-                        <input type="text" name="user_name" id="user_name" class="input-field" placeholder="User Name" required>
+                        <input type="text" name="username" id="username" class="input-field" placeholder="User Name" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="mb-3">
                         <label>Password</label>
-                        <input type="password" name="pwd" id="pwd" class="input-field" required>
+                        <input type="password" name="password" id="password" class="input-field" required>
                         
                     </div>
                     <div class="mb-3">
@@ -94,31 +94,48 @@
                     </div>
                 
                 <div class="form-field">
-                    <input type="submit" value="Log In" class="login" name="login">
+                    <button type="submit" class="login" name="login">Log In</button>
                 </div>
             </form>
         </div>
 
-                   <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+ 
+    <script>
+        // Validate login form
+        function validateLoginForm() {
+          var savedUsername = getCookie("username");
+          var savedPassword = getCookie("password");
 
-<!-- ============================================================================================== -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-     
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-    <script src="vendor/bootstrap/js/popper.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-    <script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-    <script src="vendor/tilt/tilt.jquery.min.js"></script>
-
-    <scrpit src="./Js/Script.js"></scrpit>
+          var username = document.getElementById("username").value;
+          var password = document.getElementById("password").value;
+        
+          // Check that both fields are filled out
+          if (username == "" || password == "") {
+            alert("Please enter both your username and password.");
+            return false;
+          }
+        
+          // Check if the saved username and password match the ones entered in the form
+          if (savedUsername != "" && savedPassword != "" && username === savedUsername && password === savedPassword) {
+            // Redirect to the home page
+            alert("Welcome to Citi-Bets.");
+            window.location.href = 'communities.html';
+            return true;
+          } else {
+            alert("Incorrect username or password. Please try again.");
+            return false;
+          }
+        }
+        
+        // Function to read a cookie by its name
+        function getCookie(name) {
+          var value = "; " + document.cookie;
+          var parts = value.split("; " + name + "=");
+          if (parts.length == 2) {
+            return parts.pop().split(";").shift();
+          }
+          return "";
+        }
+    </script>
     </body>
 </html>

@@ -114,23 +114,71 @@ function searchResults(){
 				<img src="./images/socceroi.png" alt="Sport Image">
 				<h3>Soccer</h3>
 				<p>Games that play on the imagination, win big, win today.</p>
-				<a href="#soccerh"><button class="btn">View log</button></a>
+				<button class="btn" id="log-button">View log</button>
 			  </div>
 			  
 			  <div id="Cricket" class="tabcontent">
 				<img src="./images/cricketoi.png" alt="Sport Image">
 				<h3>Cricket</h3>
 				<p>Cricket is a funny game, we have legends and living legends but the game does'nt stop for anyone!   WIN BIG!!!</p>
-				<a href="#cricketh"><button class="btn">View log</button></a>
+				<button class="btn" id="cricket-button">View log</button>
 			  </div>
 			  
 			  <div id="Rugby" class="tabcontent">
 				<img src="./images/images (12).jpg" alt="Sport Image">
 				<h3>Rugby</h3>
 				<p>Rugby where supporting a hooker wont get you a divorce.</p>
-				<a href="#rugbyh"><button class="btn">View log</button></a>
+				<button class="btn">View log</button>
 			  </div>			  
-							  
+
+<!-- The log modal -->
+<div id="log-modal" class="modal">
+  <!-- Soccer Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Soccer Log</h2>
+    <table id="log-table">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Team Name</th>
+          <th>Points</th>
+          <th>Wins</th>
+          <th>Losses</th>
+          <th>Draws</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data will be dynamically inserted here -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div id="cricket-modal" class="modal">
+  <!-- Cricket Modal content -->
+  <div class="modal-content">
+    <span class="cclose">&times;</span>
+    <h3>Cricket Standings</h3>
+    <table id="cricket-table">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Team Name</th>
+          <th>Matches Played</th>
+          <th>Wins</th>
+          <th>Losses</th>
+          <th>Points</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+
+			  
 		</section>
 		<section class="search">
 			<h2>Search</h2>
@@ -533,6 +581,115 @@ function searchResults(){
 		<!-- Footer End -->
 
 <script>
+// Get the soccer modal
+var modal = document.getElementById("log-modal");
+
+// Get the button that opens the modal
+var sbtn = document.getElementById("log-button");
+
+// Get the <span> element that closes the modal
+var sspan = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+sbtn.onclick = function() {
+modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+sspan.onclick = function() {
+modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+if (event.target == modal) {
+modal.style.display = "none";
+}
+}
+
+// Example data to be displayed in the table
+var logData = [
+{rank: 1, teamName: "Team A", points: 20, wins: 6, losses: 1, draws: 2},
+{rank: 2, teamName: "Team B", points: 18, wins: 5, losses: 2, draws: 1},
+{rank: 3, teamName: "Team C", points: 17, wins: 5, losses: 3, draws: 0},
+{rank: 4, teamName: "Team D", points: 15, wins: 4, losses: 3, draws: 1},
+];
+
+// Populate the table with the data
+var tbody = document.querySelector("#log-table tbody");
+
+logData.forEach(function(teams) {
+var row = document.createElement("tr");
+
+var rankCell = document.createElement("td");
+rankCell.textContent = teams.rank;
+row.appendChild(rankCell);
+
+var teamNameCell = document.createElement("td");
+teamNameCell.textContent = teams.teamName;
+row.appendChild(teamNameCell);
+
+var pointsCell = document.createElement("td");
+pointsCell.textContent = teams.points;
+row.appendChild(pointsCell);
+
+var winsCell = document.createElement("td");
+winsCell.textContent = teams.wins;
+row.appendChild(winsCell);
+
+var lossesCell = document.createElement("td");
+lossesCell.textContent = teams.losses;
+row.appendChild(lossesCell);
+
+var drawsCell = document.createElement("td");
+drawsCell.textContent = teams.draws;
+row.appendChild(drawsCell);
+
+tbody.appendChild(row);
+});
+//Sorting function
+function sortTable(n, tableId) {
+  var table = document.getElementById(tableId);
+  if (!table) {
+    return; // return early if tableId is not found
+  }
+  var rows = table.rows;
+  var switching = true;
+  var i, x, y, shouldSwitch, dir, switchcount = 0;
+  dir = "asc";
+  while (switching) {
+    switching = false;
+    for (i = 1; i < (rows.length - 1); i++) {
+      shouldSwitch = false;
+      x = rows[i].getElementsByTagName("td")[n];
+      y = rows[i + 1].getElementsByTagName("td")[n];
+      if (x && y) { // make sure both x and y exist
+        if (dir == "asc") {
+          if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+            shouldSwitch = true;
+            break;
+          }
+        } else if (dir == "desc") {
+          if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+            shouldSwitch = true;
+            break;
+          }
+        }
+      }
+    }
+    if (shouldSwitch) {
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      switchcount ++;
+    } else {
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+
 	// Soccer betting
 function addBet(event, selection, odds) {
   // Get the bet slip table and the total stake and total winnings cells
