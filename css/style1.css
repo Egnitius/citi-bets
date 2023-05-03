@@ -100,6 +100,9 @@ nav a:hover {
 }
 
 @media (max-width: 768px) {
+  nav{
+    display: none;
+  }
   nav ul {
     width: 100%;
   }
@@ -693,3 +696,31 @@ footer {
   background-color: yellow; /* Set the background color of the scrollbar thumb on hover */
 }
 /* End of rugby content sroll options */
+
+
+/* betSlip content sroll options */
+#bet-content {
+  height: 500px; /* Set the height to 300 pixels */
+  overflow-y: scroll; /* Enable vertical scrolling */
+}/* Webkit browsers */
+#bet-content::-webkit-scrollbar {
+  width: 5px; /* Set the width of the scrollbar */
+}
+
+#bet-content::-webkit-scrollbar-track {
+  background: red; /* Set the background color of the scrollbar track */
+}
+
+/* Firefox */
+#bet-content {
+  scrollbar-width: thin; /* Set the width of the scrollbar */
+}
+
+#bet-content::-webkit-scrollbar-track {
+  background: #E4D00A; /* Set the background color of the scrollbar track */
+}
+
+#bet-content::-webkit-scrollbar-thumb:hover {
+  background-color: yellow; /* Set the background color of the scrollbar thumb on hover */
+}
+/* End of betSlip content sroll options */

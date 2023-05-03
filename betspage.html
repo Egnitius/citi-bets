@@ -260,14 +260,14 @@ function searchResults(){
 	<div class="betting-options">
 		<h4>Top Batsman</h4>
 		<ul>
-		  <li><button>Virat Kohli</button></li>
-		  <li><button>Joe Root</button></li>
-		  <li><button>Jonny Bairstow</button></li>
+		  <li><button onclick="addBet('India vs. England', 'Virat Kohli', 3.80)">Virat Kohli (3.80)</button></li>
+		  <li><button onclick="addBet('India vs. England', 'Joe Root', 4.00)">Joe Root (4.00)</button></li>
+		  <li><button onclick="addBet('India vs. England', 'Jonny Bairstow', 4.50)">Jonny Bairstow (4.50)</button></li>
 		</ul>
 		<h4>Winner of the Match</h4>
 		<ul>
-		  <li><button id="ibtn">India</button></li>
-		  <li><button>England</button></li>
+		  <li><button onclick="addBet('India vs. England', 'India', 1.80)">India (1.80)</button></li>
+		  <li><button onclick="addBet('India vs. England', 'England', 2.20)">England (2.20)</button></li>
 		</ul>
 	</div>
  
@@ -280,14 +280,14 @@ function searchResults(){
   <div class="betting-options">
 	<h4>Top Batsman</h4>
 	<ul>
-	  <li><button>Chris Gayle</button></li>
-	  <li><button>Babar Azam</button></li>
-	  <li><button>Shai Hope</button></li>
+	  <li><button onclick="addBet('West Indies vs. Pakistan', 'Chris Gayle', 3.50)">Chris Gayle (3.50)</button></li>
+	  <li><button onclick="addBet('West Indies vs. Pakistan', 'Babar Azam', 4.00)">Babar Azam (4.00)</button></li>
+	  <li><button onclick="addBet('West Indies vs. Pakistan', 'Shai Hope', 4.50)">Shai Hope (4.50)</button></li>
 	</ul>
 	<h4>Winner of the Match</h4>
 	<ul>
-	  <li><button>West Indies</button></li>
-	  <li><button>Pakistan</button></li>
+	  <li><button onclick="addBet('West Indies vs. Pakistan', 'West Indies', 1.80)">West Indies (1.80)</button></li>
+	  <li><button onclick="addBet('West Indies vs. Pakistan', 'Pakistan', 2.20)">Pakistan (2.20)</button></li>
 	</ul>
   </div>
 
@@ -299,14 +299,14 @@ function searchResults(){
   <div class="betting-options">
 	<h4>Top Batsman</h4>
 	<ul>
-	  <li><button>Quinton de Kock</button></li>
-	  <li><button>Kusal Mendis</button></li>
-	  <li><button>Hashim Amla</button></li>
+	  <li><button onclick="addBet('South Africa vs. Sri Lanka', 'Quinton de Kock', 3.50)">Quinton de Kock (3.50)</button></li>
+	  <li><button onclick="addBet('South Africa vs. Sri Lanka', 'Kusal Mendis', 4.00)">Kusal Mendis (4.00)</button></li>
+	  <li><button onclick="addBet('South Africa vs. Sri Lanka', 'Hashim Amla', 4.50)">Hashim Amla (4.50)</button></li>
 	</ul>
 	<h4>Winner of the Match</h4>
 	<ul>
-	  <li><button>South Africa</button></li>
-	  <li><button>Sri Lanka</button></li>
+	  <li><button onclick="addBet('South Africa vs. Sri Lanka', 'South Africa', 1.80)">South Africa (1.80)</button></li>
+	  <li><button onclick="addBet('South Africa vs. Sri Lanka', 'Sri Lanka', 2.20)">Sri Lanka (2.20)</button></li>
 	</ul>
   </div>
   
@@ -323,17 +323,17 @@ function searchResults(){
 	<div class="betting-options">
 		<h4>Next Scoring Play</h4>
 		<ul>
-			<li><button>New Zealand Try</button></li>
-			<li><button>Australia Penalty</button></li>
-			<li><button>No Scoring in Next 5 minutes</button></li>
+			<li><button onclick="addBet('New Zealand vs. Australia', 'New Zealand Try', 1.50)">New Zealand Try (1.50)</button></li>
+			<li><button onclick="addBet('New Zealand vs. Australia', 'Australia Penalty', 2.00)">Australia Penalty (2.00)</button></li>
+			<li><button onclick="addBet('New Zealand vs. Australia', 'No Scoring in Next 5 minutes', 2.50)">No Scoring in Next 5 minutes (2.50)</button></li>
 		</ul>
 	<h4>Winning Margin</h4>
 		<ul>
-			<li><button>New Zealand by 1-10 points</button></li>
-			<li><button>New Zealand by 11-20 points</button></li>
-			<li><button>Australia by 1-10 points</button></li>
-			<li><button>Australia by 11-20 points</button></li>
-			<li><button>Draw</button></li>
+			<li><button onclick="addBet('New Zealand vs. Australia', 'New Zealand by 1-10 points', 1.80)">New Zealand by 1-10 points (1.80)</button></li>
+			<li><button onclick="addBet('New Zealand vs. Australia', 'New Zealand by 11-20 points', 2.40)">New Zealand by 11-20 points (2.40)</button></li>
+			<li><button onclick="addBet('New Zealand vs. Australia', 'Australia by 1-10 points', 3.10)">Australia by 1-10 points (3.10)</button></li>
+			<li><button onclick="addBet('New Zealand vs. Australia', 'Australia by 11-20 points', 4.00)">Australia by 11-20 points(4.00)</button></li>
+			<li><button onclick="addBet('New Zealand vs. Australia', 'Draw', 1.00)">Draw (1.00)</button></li>
 		</ul>
 	</div>
 
@@ -345,17 +345,17 @@ function searchResults(){
 	<div class="betting-options">
 		<h4>Next Scoring Play</h4>
 		<ul>
-			<li><button>Fiji Try</button></li>
-			<li><button>South Africa Penalty</button></li>
-			<li><button>No Scoring in Next 5 minutes</button></li>
+			<li><button onclick="addBet('South Africa vs. Fiji', 'New Zealand Try', 1.50)">Fiji Try (1.50)</button></li>
+			<li><button onclick="addBet('South Africa vs. Fiji', 'South Africa Penalty', 2.00)">South Africa Penalty (2.00)</button></li>
+			<li><button onclick="addBet('South Africa vs. Fiji', 'No Scoring in Next 5 minutes', 2.50)">No Scoring in Next 5 minutes (2.50)</button></li>
 		</ul>
 	<h4>Winning Margin</h4>
 		<ul>
-			<li><button>Fiji by 10-20 points</button></li>
-			<li><button>Fiji by 18-20 points</button></li>
-			<li><button>South Africa by 10-20 points</button></li>
-			<li><button>South Africa by 18-28 points</button></li>
-			<li><button>Draw</button></li>
+			<li><button onclick="addBet('South Africa vs. Fiji', 'New Zealand by 1-10 points', 1.80)">Fiji by 1-10 points (1.80)</button></li>
+			<li><button onclick="addBet('South Africa vs. Fiji', 'New Zealand by 11-20 points', 2.40)">Fiji by 11-20 points (2.40)</button></li>
+			<li><button onclick="addBet('South Africa vs. Fiji', 'Australia by 1-10 points', 3.10)">South Africa by 1-10 points (3.10)</button></li>
+			<li><button onclick="addBet('South Africa vs. Fiji', 'Australia by 11-20 points', 4.00)">South Africa by 11-20 points(4.00)</button></li>
+			<li><button onclick="addBet('South Africa vs. Fiji', 'Draw', 1.00)">Draw (1.00)</button></li>
 		</ul>
 	</div>
 
@@ -367,22 +367,24 @@ function searchResults(){
 	<div class="betting-options">
 		<h4>Next Scoring Play</h4>
 		<ul>
-			<li><button>Wales Try</button></li>
-			<li><button>Argentina Penalty</button></li>
-			<li><button>No Scoring in Next 5 minutes</button></li>
+			<li><button onclick="addBet('Argentina vs. Wales', 'Argentina Try', 1.50)">Argentina Try (1.50)</button></li>
+			<li><button onclick="addBet('Argentina vs. Wales', 'Wales Penalty', 2.00)">Wales Penalty (2.00)</button></li>
+			<li><button onclick="addBet('Argentina vs. Wales', 'No Scoring in Next 5 minutes', 2.50)">No Scoring in Next 5 minutes (2.50)</button></li>
 		</ul>
 	<h4>Winning Margin</h4>
 		<ul>
-			<li><button>Wales by 5-16 points</button></li>
-			<li><button>Wales by 19-26 points</button></li>
-			<li><button>Argentina by 7-13 points</button></li>
-			<li><button>Argentina by 19-30 points</button></li>
-			<li><button>Draw</button></li>
+			<li><button onclick="addBet('Argentina vs. Wales', 'Argentina by 1-10 points', 1.80)">Argentina by 1-10 points (1.80)</button></li>
+			<li><button onclick="addBet('Argentina vs. Wales', 'Argentina by 11-20 points', 2.40)">Argentina by 11-20 points (2.40)</button></li>
+			<li><button onclick="addBet('Argentina vs. Wales', 'Wales by 1-10 points', 3.10)">Wales by 1-10 points (3.10)</button></li>
+			<li><button onclick="addBet('Argentina vs. Wales', 'Wales by 11-20 points', 4.00)">Wales by 11-20 points(4.00)</button></li>
+			<li><button onclick="addBet('Argentina vs. Wales', 'Draw', 1.00)">Draw (1.00)</button></li>
 		</ul>
 	</div>
+
 		</section>		  
 		<section class="Bets">
 			<h2>Bet slip</h2>
+			<div class="bet-content">
 			<div class="bet-slip">
 				<h3>My bets</h3>
 				<table>
@@ -422,7 +424,7 @@ function searchResults(){
 				<button class="btn-clear" onclick="clearBetSlip()">Clear bet slip</button>
 				<button class="btn-place" onclick="placeBets()">Place bets</button>
 			  </div>
-			  
+			</div>
 		</section>
 		
 	</main>
@@ -493,141 +495,6 @@ function searchResults(){
 		<!-- Footer End -->
 
 <script>
-// select all the buttons in the rugby betting options section
-var rugbyButtons = document.querySelectorAll("#rugby-content .betting-options button");
-
-// add click event listener to each button
-rugbyButtons.forEach(function(button) {
-  button.addEventListener("click", function() {
-    // get the match name, bet type and selection from the button's text
-    var matchName = button.parentElement.parentElement.previousElementSibling.querySelector("h3").textContent;
-    var betType = button.parentElement.parentElement.querySelector("h4").textContent;
-    var selection = button.textContent;
-
-    // get the odds and update the bet slip
-    var odds = getOdds(matchName, betType, selection);
-    updateBetSlip(matchName, betType, selection, odds);
-  });
-});
-
-// function to get the odds of a selection based on match name, bet type and selection
-function getOdds(matchName, betType, selection) {
-  // replace spaces in the match name with underscores and concatenate with bet type and selection to form the key
-  var key = matchName.replace(/ /g, "_") + "_" + betType + "_" + selection;
-  // use the key to retrieve the odds from a data object (example below)
-  var data = {
-    "New_Zealand_vs._Australia_Winning_Margin_New_Zealand_by_1-10_points": 2.00,
-    "New_Zealand_vs._Australia_Winning_Margin_New_Zealand_by_11-20_points": 2.50,
-    "New_Zealand_vs._Australia_Winning_Margin_Australia_by_1-10_points": 3.50,
-    "New_Zealand_vs._Australia_Winning_Margin_Australia_by_11-20_points": 4.00,
-    "New_Zealand_vs._Australia_Winning_Margin_Draw": 21.00,
-    "South_Africa_vs._Fiji_Winning_Margin_Fiji_by_10-20_points": 7.00,
-    "South_Africa_vs._Fiji_Winning_Margin_Fiji_by_18-20_points": 11.00,
-    "South_Africa_vs._Fiji_Winning_Margin_South_Africa_by_10-20_points": 2.50,
-    "South_Africa_vs._Fiji_Winning_Margin_South_Africa_by_18-28_points": 4.00,
-    "South_Africa_vs._Fiji_Winning_Margin_Draw": 34.00,
-    "Argentina_vs._Wales_Winning_Margin_Wales_by_5-16_points": 3.00,
-    "Argentina_vs._Wales_Winning_Margin_Wales_by_19-26_points": 5.00,
-    "Argentina_vs._Wales_Winning_Margin_Argentina_by_7-13_points": 4.00,
-    "Argentina_vs._Wales_Winning_Margin_Argentina_by_19-30_points": 7.00,
-    "Argentina_vs._Wales_Winning_Margin_Draw": 34.00
-  };
-  return data[key];
-}
-
-// function to update the bet slip with a new bet
-function updateBetSlip(matchName, betType, selection, odds) {
-  var betSlipTable = document.querySelector(".bet-slip table tbody");
-  var newRow = document.createElement("tr");
-  newRow.innerHTML = `
-    <td>${matchName}</td>
-    <td>${betType}: ${selection}</td>
-    <td>${odds}</td>
-    <td><input type="number" min="1" max="1000" value="1" oninput="calculatePotentialWinnings(this)"></td>
-    <td class="potential-winnings">0</td>
-    <td><button class="btn-remove" onclick="removeBet(this)">X</button></td>
-  `;
-  betSlipTable.appendChild(newRow);
-  updateTotalStake();
-  updateTotalWinnings();
-  updateBalance();
-} 
-// function to calculate the potential winnings for a bet based on the stake and odds
-function calculatePotentialWinnings(input) {
-var stake = parseInt(input.value);
-var odds = parseFloat(input.parentElement.previousElementSibling.textContent);
-var potentialWinnings = input.parentElement.nextElementSibling;
-var winnings = stake * odds;
-potentialWinnings.textContent = winnings.toFixed(2);
-updateTotalStake();
-updateTotalWinnings();
-updateBalance();
-}
-
-// function to remove a bet from the bet slip
-function removeBet(button) {
-var row = button.parentElement.parentElement;
-row.remove();
-updateTotalStake();
-updateTotalWinnings();
-updateBalance();
-}
-
-// function to clear the bet slip of all bets
-function clearBetSlip() {
-var betSlipTable = document.querySelector(".bet-slip table tbody");
-while (betSlipTable.firstChild) {
-betSlipTable.removeChild(betSlipTable.firstChild);
-}
-updateTotalStake();
-updateTotalWinnings();
-updateBalance();
-}
-
-// function to update the total stake displayed in the bet slip
-function updateTotalStake() {
-var totalStake = 0;
-var stakeElements = document.querySelectorAll(".bet-slip table tbody td input[type='number']");
-for (var i = 0; i < stakeElements.length; i++) {
-totalStake += parseInt(stakeElements[i].value);
-}
-document.getElementById("total-stake").textContent = totalStake;
-}
-
-// function to update the total winnings displayed in the bet slip
-function updateTotalWinnings() {
-var totalWinnings = 0;
-var winningsElements = document.querySelectorAll(".bet-slip table tbody .potential-winnings");
-for (var i = 0; i < winningsElements.length; i++) {
-totalWinnings += parseFloat(winningsElements[i].textContent);
-}
-document.getElementById("total-winnings").textContent = totalWinnings.toFixed(2);
-}
-
-// function to update the balance displayed in the bet slip
-function updateBalance() {
-var totalStake = parseInt(document.getElementById("total-stake").textContent);
-var totalWinnings = parseFloat(document.getElementById("total-winnings").textContent);
-var balance = 100 - totalStake + totalWinnings;
-document.getElementById("balance").textContent = balance.toFixed(2);
-}
-
-// function to place the bets and update the balance
-function placeBets() {
-var totalStake = parseInt(document.getElementById("total-stake").textContent);
-var balance = parseFloat(document.getElementById("balance").textContent);
-if (totalStake > balance) {
-alert("Not enough balance to place the bets.");
-} else {
-alert("Bets placed successfully.");
-document.querySelector(".bet-slip table tbody").innerHTML = "";
-document.getElementById("total-stake").textContent = 0;
-document.getElementById("total-winnings").textContent = 0;
-document.getElementById("balance").textContent = balance - totalStake;
-}
-}
-
-
 	// Soccer betting
 function addBet(event, selection, odds) {
   // Get the bet slip table and the total stake and total winnings cells
