@@ -53,9 +53,9 @@ function openTab(event, tabName) {
   document.getElementById(tabName).style.display = "block";
   event.currentTarget.className += " active";
 }
+// End of function to show/hide sports content
 
 // Search team codes
-
 function searchResults(){
 		let input = document.getElementById('search_bar').value;
 		input = input.toLowerCase();
@@ -446,18 +446,56 @@ function searchResults(){
 		</section>
 		<section class="upcoming">
 			<h2>Upcoming Events and Matches</h2>
-			<!-- Code for upcoming events and matches goes here -->
+				<ul>
+				  <li>
+					<span class="date">May 8, 2023</span>
+					<span class="event">Rugby Match: Australia vs. New Zealand</span>
+				  </li>
+				  <li>
+					<span class="date">May 15, 2023</span>
+					<span class="event">Rugby Match: England vs. South Africa</span>
+				  </li>
+				  <li>
+					<span class="date">May 22, 2023</span>
+					<span class="event">Rugby Match: Ireland vs. Wales</span>
+				  </li>
+				  <li>
+					<span class="date">May 8, 2023</span>
+					<span class="event">Soccer Match: Brighton vs. Everton</span>
+				  </li>
+				  <li>
+					<span class="date">May 13, 2023</span>
+					<span class="event">Soccer Match: Leeds United vs. Newcastle</span>
+				  </li>
+				  <li>
+					<span class="date">May 20, 2023</span>
+					<span class="event">Soccer Match: Tottenham vs. Brentford</span>
+				  </li>
+				  <li>
+					<span class="date">May 9, 2023</span>
+					<span class="event">Cricket Match: Ireland vs. Bangladesh</span>
+				  </li>
+				  <li>
+					<span class="date">May 10, 2023</span>
+					<span class="event">Cricket Match: Cambodia vs. Philipines</span>
+				  </li>
+				  <li>
+					<span class="date">May 18, 2023</span>
+					<span class="event">Cricket Match: Denmark vs. Norway</span>
+				  </li>
+				</ul>
 		</section>
-		<section class="quick-links">
+			  
+		<!-- <section class="quick-links">
 			<h2>Logs</h2>
 			<h3 style="text-align: center;" id="soccerh">Soccer</h3>
-			<!-- code for logs comes in here -->
+			
 			<h3 style="text-align: center;" id="cricketh">Cricket</h3>
-			<!-- code for logs comes in here -->
+			
 			<h3 style="text-align: center;" id="rugbyh">Rugby</h3>
-			<!-- code for logs comes in here -->
+			
 
-		</section>
+		</section> -->
 	</aside>
 
 

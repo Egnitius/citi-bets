@@ -521,13 +521,61 @@ aside {
 }
 /* end of promotions */
 
+/* upcoming style */
 .upcoming {
-    margin-bottom: 20px;
+  margin: 20px 0;
+  background-color: #F6FF75;
 }
 
-.quick-links {
-    margin-bottom: 20px;
+.upcoming h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
+
+.upcoming ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.upcoming li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid red;
+  padding: 10px 0;
+}
+
+.upcoming li:last-child {
+  border-bottom: none;
+}
+
+.upcoming li .match-details {
+  display: flex;
+  align-items: center;
+}
+
+.upcoming li .match-details .team-name {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.upcoming li .match-details .match-time {
+  font-size: 14px;
+  color: #666;
+}
+
+.upcoming li .bet-btn {
+  background-color: #F6FF75;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+/* end of upcoming */
 
 /* footer */
 footer {
