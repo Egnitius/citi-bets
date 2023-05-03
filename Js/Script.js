@@ -55,7 +55,7 @@ function login() {
     if (username === sessionStorage.getItem("username") && password === sessionStorage.getItem("password")) {
       alert("Login successful!");
       // Redirect to the home page
-      window.location.href = "Home.html";
+      window.location.href = "betspage.html";
       return true;
     } else {
       alert("Incorrect username or password. Please try again.");
