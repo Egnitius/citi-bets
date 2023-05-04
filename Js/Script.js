@@ -53,3 +53,8 @@ function login() {
       return false;
     }
   }
+
+
+  //bets to cookies
+  
+  
