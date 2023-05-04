@@ -583,8 +583,12 @@ function placeBets() {
     bets.push(bet);
   }
 
-  // Save the bets to cookies
+  // Get the current balance
+  var balance = document.getElementById("balance").textContent;
+
+  // Save the bets and balance to cookies
   document.cookie = "bets=" + JSON.stringify(bets);
+  document.cookie = "balance=" + balance;
 
   // Show alert to confirm bet placement
   alert("Your bet has been placed successfully!");
@@ -592,18 +596,6 @@ function placeBets() {
   // Redirect the user to their profile page
 //   window.location.href = "profile.html";
 }
-// Get the balance and total stake elements
-const balanceEl = document.getElementById('balance');
-const totalStakeEl = document.getElementById('total-stake');
-
-// Update the balance as the total stake changes
-totalStakeEl.addEventListener('input', () => {
-  const balance = parseFloat(balanceEl.textContent);
-  const totalStake = parseFloat(totalStakeEl.textContent);
-  const newBalance = balance - totalStake;
-  balanceEl.textContent = newBalance.toFixed(2);
-});
-
 </script>
 
 			  </div>
