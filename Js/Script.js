@@ -54,7 +54,4 @@ function login() {
     }
   }
 
-
-  //bets to cookies
-  
   
