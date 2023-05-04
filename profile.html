@@ -127,21 +127,6 @@ float: right;
 color: grey;
 }
 
-select {
-width: 100%;
-margin-bottom: 20px;
-padding: 10px 15px;
-border: 1px solid #e5e5e5;
-border-radius: 3px;
-outline: none;
-color: #333;
-appearance: none; /* remove default arrow */
-background-image: url('data:image/svg+xml;utf8,<svg fill="%23333333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>'); /* add custom arrow */
-background-repeat: no-repeat;
-background-position: right 10px top 50%;
-background-size: 24px auto;
-}
-
 select:focus {
   border: 1px solid red;
 }
@@ -241,8 +226,8 @@ section {
           <h3>PERSONAL INFORMATION</h3>
           <label for="fname"><i class="fa fa-user"></i> Full Name</label>
           <input type="text" id="fname" name="firstname" placeholder="">
-          <label><i class="fa fa-user"></i>User Name</label>
-          <input type="text" name="username" id="rusername" class="input-field" placeholder="">
+          <label for="pusername"><i class="fa fa-user"></i>User Name</label>
+          <input type="text" name="username" id="pusername" class="input-field" placeholder="">
           <label for="email"><i class="fa fa-envelope"></i> Email</label>
           <input type="text" id="email" name="email" placeholder="">
           

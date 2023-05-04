@@ -26,7 +26,7 @@ body{
 }
 
 .wrapper .form-left{
-    background: linear-gradient(to bottom, red,yellow);
+    background: linear-gradient(to left, red,yellow);
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     padding: 20px 40px;
@@ -60,7 +60,7 @@ body{
 
 .wrapper .form-left input{
     padding: 15px;
-    background: lightyellow;
+    background: linear-gradient(to left,yellow,red);
     border-top-left-radius: 5px;
     border-bottom-right-radius: 5px;
     width: 180px;
@@ -75,23 +75,24 @@ body{
 }
 
 .wrapper .form-left input:hover{
-    background-color: #f2f2f2;
+    color: white;
 }
 
 .wrapper .form-right{
     padding: 20px 40px;
     position: relative;
     width: 100%;
+    background: linear-gradient(to left,yellow,red);
 }
 
 .wrapper .form-right h2{
-    color: #3786bd;
+    color: black;
 }
 
 .wrapper .form-right label{
     font-weight: 600;
     font-size: 15px;
-    color: #666;
+    color: black;
     display: block;
     margin-bottom: 8px;
 }
@@ -107,7 +108,7 @@ body{
 }
 
 .wrapper .form-right .input-field:focus{
-    border: 1px solid red;
+    border: 1px solid black;
 }
 
 
@@ -172,34 +173,34 @@ body{
 
 .wrapper .register{
     padding: 12px;
-    background: #3786bd;
+    background: linear-gradient(to bottom, yellow, red);
     border-top-left-radius: 5px;
     border-bottom-right-radius: 5px;
     width: 130px;
     border: none;
     margin: 6px 0 50px 0px;
     cursor: pointer;
-    color: #fff;
+    color: black;
     font-weight: 700;
     font-size: 15px;
 }
 
 .wrapper .login{
     padding: 12px;
-    background: #3786bd;
+    background: linear-gradient(to bottom, yellow, red);
     border-top-left-radius: 5px;
     border-bottom-right-radius: 5px;
     width: 130px;
     border: none;
     margin: 6px 0 50px 0px;
     cursor: pointer;
-    color: #fff;
+    color: black;
     font-weight: 700;
     font-size: 15px;
 }
 
 .wrapper .register:hover{
-    background-color: #3785bde0;
+    color: white;
 }
 
 .wrapper a{
