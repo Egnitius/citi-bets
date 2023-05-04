@@ -218,11 +218,11 @@ section {
   display: none;
   padding: 6px 12px;
   border-top: none;
-  width: 240px;
+  width: auto;
 }
 .tabcontent img {
-  height: 200px;
-  width: 240px;
+  height: 300px;
+  width: 340px;
 }
 
 /* Style the soccer modal */
@@ -396,7 +396,7 @@ section {
     border-bottom: 2px solid black;
     padding: 10px;
     margin-right: 10px;
-    /* width: 70%; */
+    width: 70%;
     font-size: 16px;
     color: black;
   }
