@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My Sports Betting Website</title>
+	<title>Citi-Bets</title>
 <!-- Favicon -->
 <link href="img/favicon.ico" rel="icon">
 
@@ -57,20 +57,22 @@ function openTab(event, tabName) {
 
 // Search team codes
 function searchResults(){
-		let input = document.getElementById('search_bar').value;
-		input = input.toLowerCase();
-		let searchList = document.getElementsByClassName('search_results');
-		 for(let indexValue =0; indexValue <searchList.length; indexValue++){
-			 if(!searchList[indexValue].innerText.toLowerCase().includes(input)){
-				searchList[indexValue].style.display="none";
-				}
-				else {
-					searchList[indexValue].display="list-item";			
-				}
-		 }
-
-		
-	}
+  let input = document.getElementById('search_bar').value;
+  input = input.toLowerCase();
+  let searchList = document.getElementsByClassName('search_results');
+  for(let indexValue =0; indexValue <searchList.length; indexValue++){
+    if(!searchList[indexValue].innerText.toLowerCase().includes(input)){
+      searchList[indexValue].style.display="none";
+    } else {
+      searchList[indexValue].style.display="list-item";     
+    }
+  }
+  if (input === "") {
+    for(let indexValue =0; indexValue <searchList.length; indexValue++){
+      searchList[indexValue].style.display="list-item";
+    }
+  }
+}
 // end here
 
 </script>
@@ -92,9 +94,42 @@ function searchResults(){
 			  </li>
 			  <li><a href="#">Communities</a></li>
 			  <li><a href="Help.html">Help</a></li>
-			  <li><a href="Login.html">Login</a></li>
-			  <li><a href="Register.html">Register</a></li>
-			</ul>
+			
+			  <li><img src="images/profile.png" class="profile-pic" onclick="toggleMenu()"></li>
+            </ul>
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <img src="images/profile.png">
+                        <h3>profile</h3>
+                    </div>
+                    <hr>
+
+                    <a href="profile.html" class="sub-menu-link">
+                       <img src="images/profile.png">
+                       <p>Edit Profile</p>
+                       <span></span> 
+                    </a>
+
+                    <a href="setting.html" class="sub-menu-link">
+                        <img src="images/setting.png">
+                        <p>Settings & Privacy</p>
+                        <span></span> 
+                    </a>
+
+					<a href="Login.html" class="sub-menu-link">
+                        <img src="images/setting.png">
+                        <p>Register</p>
+                        <span></span> 
+                    </a>
+
+                    <a href="betspage.html" class="sub-menu-link">
+                        <img src="images/logout.png">
+                        <p>Logout</p>
+                        <span></span> 
+                    </a>
+                </div>
+            </div>
 		  </nav>
 		  <div class="hamburger">&#9776;</div>
 		</div>
@@ -218,7 +253,7 @@ function searchResults(){
 				<input type="text" placeholder="Find your teams" id="search_bar" onkeypress="searchResults()">
 				<!-- <button type="submit"><i class="fa fa-search"></i></button> -->
 			  </form>
-			  <h1 class="search_by_header">Soccer Fixture</h1>
+			  <h1 class="search_results">Soccer Fixture</h1>
 			  <ul class=""> 
 				<!-- <h1>Soccer Fixture</h1> -->
 				<li class="search_results">Chelsea Vs Arsenal</li>
@@ -229,9 +264,9 @@ function searchResults(){
 				<li class="search_results">Royal AM Vs TX Gallants</li>
 			  </ul>
 			
-			   <h1>Cricket Fixture</h1>
+			   <h1 class="search_results">Cricket Fixture</h1>
 			 
-			  <ul class="search_by_header">
+			  <ul>
 				<li class="search_results">Dolphins Vs Knights</li>
 				<li class="search_results">South Africa Vs New Zealand</li>
 				<li class="search_results">Warriors Vs Titans</li>
@@ -240,7 +275,7 @@ function searchResults(){
 				<li class="search_results">Border Vs Easterns</li>
 			  </ul>
 
-			   <h1>Rugby Fixture</h1>
+			   <h1 class="search_results">Rugby Fixture</h1>
 			  <ul class="list">
 				<li class="search_results">Blue Bulls Vs Cheetahs</li>
 				<li class="search_results">Falcons Vs Golden Lions</li>
@@ -650,9 +685,8 @@ function placeBets() {
 				</ul>
 		</section>
 	</aside>
-
-
-	    <!-- Footer Start -->
+	
+	<!-- Footer Start -->
 		<footer>
 			<div class="footer-container">
 			  <div class="footer-section contact">
@@ -676,16 +710,14 @@ function placeBets() {
 			<nav class="btmnav">
 			  <ul>
 				<li><a href="#">Privacy Policy</a></li>
-				<li><a href="#">Responsible Gambling</a></li>
-				<li><a href="#">Terms and Conditions</a></li>
+				<li><a href="Responsible.html">Responsible Gambling</a></li>
+				<li><a href="T&Cs.html">Terms and Conditions</a></li>
 			  </ul>
 			</nav>
 			<p>&copy; CITI-BETS</p>
 		  </footer>
 		  
 		<!-- Footer End -->
-
-
 
 <script>
 	// sports betting
@@ -812,9 +844,9 @@ function updateTotalStakeAndWinnings() {
 // end of sports betting
 </script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-		<script src="./Js/Script.js"></script>
 		<script src="./Js/soccer.js"></script>
 		<script src="./Js/cricket.js"></script>
 		<script src="./Js/rugby.js"></script>
+		<script src="./Js/profile.js"></script>
 </body>
 </html>
