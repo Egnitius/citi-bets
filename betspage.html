@@ -592,7 +592,24 @@ for (var i = 0; i < bets.length; i++) {
 
 // Clear the table on page load
 tableBody.innerHTML = "";
+const balanceDisplay = document.querySelector('#balance');
+  const balanceDisplayBet = document.querySelector('#balance');
+  const balanceDisplayTable = document.querySelector('#bets-table #balance');
 
+  balanceDisplayTable.textContent = balanceDisplayBet.textContent;
+
+  const depositForm = document.querySelector('.depositfrm');
+  const depositInput = document.querySelector('#amount');
+
+  depositForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const depositAmount = parseFloat(depositInput.value);
+    const currentBalance = parseFloat(balanceDisplay.textContent);
+    const newBalance = currentBalance + depositAmount;
+    balanceDisplay.textContent = newBalance.toFixed(2);
+    balanceDisplayTable.textContent = balanceDisplay.textContent;
+    depositInput.value = '';
+  });
 function placeBets() {
   // Get the bets from the table
   var betsTable = document.getElementById("bets-table");

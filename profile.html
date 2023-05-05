@@ -393,6 +393,22 @@ for (var i = 0; i < bets.length; i++) {
       
     </div>
   </section>
+  <script>
+    const depositForm = document.querySelector('.depositfrm');
+    const balanceDisplay = document.querySelector('#balance');
+    const depositInput = document.querySelector('#amount');
+
+    depositForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const depositAmount = parseFloat(depositInput.value);
+      const currentBalance = parseFloat(balanceDisplay.textContent);
+      const newBalance = currentBalance + depositAmount;
+      balanceDisplay.textContent = newBalance.toFixed(2);
+      depositInput.value = '';
+  });
+
+
+  </script>
   </main>
   
 <!-- Footer Start -->
