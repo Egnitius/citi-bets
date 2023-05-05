@@ -124,7 +124,7 @@ logForm.addEventListener('submit', function(event) {
   // Check if the saved username and password match the ones entered in the form
   if (savedUsername != "" && savedPassword != "" && username === savedUsername && password === savedPassword) {
     // Redirect to the profile page
-    alert("Welcome to Citi-Bets.");
+    alert("Bet has been placed successfully.");
     window.location.href = 'profile.html'
     return true;
   } else {
@@ -143,37 +143,6 @@ function getCookie(name) {
   }
   return "";
 }
-
-
-//         function login() {
-//     // Get the form values
-//     var username = document.getElementById("username").value;
-//     var password = document.getElementById("password").value;
-  
-//     // Check if the username and password are correct
-//     if (username === sessionStorage.getItem("username") && password === sessionStorage.getItem("password")) {
-//       // Check if user data exists in cookies
-//       var userData = JSON.parse(getCookie("userData"));
-//       if (userData !== null) {
-//         alert("Login successful!");
-//         // Redirect to the profile page
-//         window.location.href = "profile.html";
-//         return true;
-//       } else {
-//         alert("User data not found. Please try again.");
-//         return false;
-//       }
-//     } else {
-//       alert("Incorrect username or password. Please try again.");
-//       return false;
-//     }
-//   }
-  
-//   function getCookie(name) {
-//     var value = "; " + document.cookie;
-//     var parts = value.split("; " + name + "=");
-//     if (parts.length == 2) return parts.pop().split(";").shift();
-//   }
   
     </script>
 

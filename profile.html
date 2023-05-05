@@ -65,7 +65,7 @@ background: linear-gradient(to bottom, red, yellow);
 /* padding: 5px 20px 15px 20px; */
 border: 1px solid lightgrey;
 border-radius: 3px;
-width: 70%;
+width: 90%;
 margin: 0 auto;
 }
 
@@ -74,7 +74,8 @@ margin: 0 auto;
 input[type=text] {
 width: 100%;
 margin-bottom: 20px;
-padding: 10px 15px;
+/* padding: 10px 5px; */
+padding-left: 2px;
 border: 1px solid #e5e5e5;
 border-radius: 3px;
 outline: none;
@@ -94,20 +95,6 @@ display: block;
 margin-bottom: 20px;
 padding: 7px 0;
 font-size: 24px;
-}
-
-.btn {
-background: linear-gradient(to bottom, yellow, red); 
-color: black;
-padding: 12px;
-margin: auto auto 20px auto;
-border: none;
-width: 30%;
-border-radius: 3px;
-cursor: pointer;
-font-weight: 700;
-font-size: 17px;
-display: block; 
 }
 
 .btn:hover {
@@ -166,6 +153,52 @@ section {
     margin-bottom: 20px;
   }
 }
+.depositfrm {
+  /* border: 5px solid #ccc; */
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.depositfrm h3 {
+  margin-top: 0;
+}
+
+.depositfrm label {
+  display: inline-block;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.depositfrm input[type="number"],
+.depositfrm input[type="text"],
+.depositfrm input[type="month"],
+.depositfrm input[type="password"] {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 70%;
+}
+
+.depositfrm button[type="submit"] {
+  background: linear-gradient(to bottom, yellow, red);
+  color: black;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 50%;
+  margin-top: 20px;
+}
+
+.depositfrm button[type="submit"]:hover {
+  color: white;
+}
+
 </style>
 <body>
     <header>
@@ -224,24 +257,144 @@ section {
       <form action="">
         <div class="col-50">
           <h3>PERSONAL INFORMATION</h3>
-          <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-          <input type="text" id="fname" name="firstname" placeholder="">
-          <label for="pusername"><i class="fa fa-user"></i>User Name</label>
-          <input type="text" name="username" id="pusername" class="input-field" placeholder="">
+          <label for="firstname"><i class="fa fa-user"></i> Full Name</label>
+          <input type="text" id="firstname" name="firstname" placeholder="" readonly>
+          <label for="username"><i class="fa fa-user"></i>User Name</label>
+          <input type="text" name="username" id="username" class="input-field" placeholder="" readonly>
           <label for="email"><i class="fa fa-envelope"></i> Email</label>
-          <input type="text" id="email" name="email" placeholder="">
-          
-      
-          <label for="password"><i class="fa fa-lock"></i> Password</label>
-          <input type="password" id="password" name="password">
-          <input type="submit" value="Update" class="btn" id="update-button" style="width: 40%;">
+          <input type="text" id="email" name="email" placeholder="" readonly>
           
         </div>
       </form>
         
     </div>
+    <script>	
+      // Get the text fields
+   const firstNameField = document.getElementById('firstname');
+   const usernameField = document.getElementById('username');
+   const emailField = document.getElementById('email');
+   
+   // Get the cookie values
+   const cookies = document.cookie.split(';');
+   let firstName = '';
+   let username = '';
+   let email = '';
+   for (let i = 0; i < cookies.length; i++) {
+     const parts = cookies[i].split('=');
+     const name = parts[0].trim();
+     const value = parts[1].trim();
+     if (name === 'firstName') {
+       firstName = value;
+     } else if (name === 'username') {
+       username = value;
+     } else if (name === 'email') {
+       email = value;
+     }
+   }
+   
+   // Set the text field values
+   firstNameField.value = firstName;
+   usernameField.value = username;
+   emailField.value = email;
+   
+       </script>
+  </section>
+  <section class="bet-hist">
+    <div class="bet-history">
+      <h3>Bet History</h3>
+      <div class="table-container-prof">
+      <table class="bet-hist-table">
+        <thead>
+          <tr>
+            <th>Event</th>
+            <th>Selection</th>
+            <th>Odds</th>
+            <th>Stake</th>
+            <th>Potential Winnings</th>
+          </tr>
+        </thead>
+        <tbody id="bet-history-table">
+          <!-- Bet history will be added dynamically with JavaScript -->
+        </tbody>
+      </table>
+      <p>Current balance: R <span id="balance"></span></p>
+    </div>
+    </div>
+
+    <script>
+    // Get the saved bets and balance from cookies
+    var bets = JSON.parse(getCookie("bets"));
+    var balance = getCookie("balance");
+    
+    // Display the bet history table
+    var betHistoryTable = document.getElementById("bet-history-table");
+    for (var i = 0; i < bets.length; i++) {
+      var bet = bets[i];
+      var row = betHistoryTable.insertRow();
+      var eventCell = row.insertCell(0);
+      var selectionCell = row.insertCell(1);
+      var oddsCell = row.insertCell(2);
+      var stakeCell = row.insertCell(3);
+      var potentialWinningsCell = row.insertCell(4);
+      eventCell.innerHTML = bet.event;
+      selectionCell.innerHTML = bet.selection;
+      oddsCell.innerHTML = bet.odds;
+      stakeCell.innerHTML = bet.stake;
+      potentialWinningsCell.innerHTML = bet.potentialWinnings;
+    }
+    // Calculate the total potential winnings
+var totalPotentialWinnings = 0;
+for (var i = 0; i < bets.length; i++) {
+  var bet = bets[i];
+  totalPotentialWinnings += parseFloat(bet.potentialWinnings);
+}
+
+    // Display the total potential winnings
+    var row = betHistoryTable.insertRow();
+    row.classList.add("total-row");
+    row.insertCell(0).innerHTML = "<strong>Total</strong>";
+    row.insertCell(1);
+    row.insertCell(2);
+    row.insertCell(3);
+    var totalPotentialWinningsCell = row.insertCell(4);
+    totalPotentialWinningsCell.innerHTML = "<strong> R" + totalPotentialWinnings.toFixed(2) + "</strong>";
+
+    // Display the balance
+    document.getElementById("balance").textContent = balance;
+    
+    // Function to get a cookie value by name
+    function getCookie(name) {
+      var value = "; " + document.cookie;
+      var parts = value.split("; " + name + "=");
+      if (parts.length == 2) return parts.pop().split(";").shift();
+    }
+    </script>
+    
+  </section>
+  <hr style="background-color: white; width: auto; height: auto;">
+  <section class="bet-hist">
+    <div class="bet-history">
+      <form action="" class="depositfrm" style="flex-direction: column; ">
+        <h3>Make a Deposit</h3>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" min="1" step="0.01" required >
+        <br>
+        <label for="card-number">Card Number:</label>
+        <input type="text" id="card-number" name="card-number" maxlength="16" pattern="[0-9]{16}" required width="2%">
+        <br>
+        <label for="expiry-date">Expiry Date:</label>
+        <input type="month" id="expiry-date" name="expiry-date" required width="300px">
+        <br>
+        <label for="cvv">CVV:</label>
+        <input type="password" id="cvv" name="cvv" maxlength="3" pattern="[0-9]{3}" required>
+        <br><br>
+        <button type="submit">Deposit</button>
+      </form>
+      
+    </div>
   </section>
   </main>
+  
 <!-- Footer Start -->
 <footer>
   <div class="footer-container">
